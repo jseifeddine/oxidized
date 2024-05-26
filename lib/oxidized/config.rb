@@ -1,5 +1,6 @@
 module Oxidized
   require 'asetus'
+  require 'erb'
   class NoConfig < OxidizedError; end
   class InvalidConfig < OxidizedError; end
 
@@ -17,6 +18,9 @@ module Oxidized
     def self.load(cmd_opts = {})
       usrdir = File.expand_path(cmd_opts[:home_dir] || Oxidized::Config::ROOT)
       cfgfile = cmd_opts[:config_file] || 'config'
+      config_content = ERB.new(File.read(File.join(usrdir, cfgfile))).result
+      File.write(File.join(usrdir, "#{cfgfile}_erb"), config_content)
+      cfgfile = "#{cfgfile}_erb"
       asetus = Asetus.new(name: 'oxidized', load: false, key_to_s: true, usrdir: usrdir, cfgfile: cfgfile)
       Oxidized.asetus = asetus
 
