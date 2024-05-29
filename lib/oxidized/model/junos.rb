@@ -44,7 +44,7 @@ class JunOS < Oxidized::Model
   end
   cmd('show system license keys') { |cfg| comment cfg }
 
-  cmd 'show configuration | display omit'
+  cmd "show configuration | display #{@display_format == 'xml' || @display_format == 'json' || @display_format == 'set' ? @display_format : 'omit'}"
 
   cfg :telnet do
     username(/^login:/)
