@@ -17,6 +17,7 @@ module Oxidized
           klass.instance_variable_set '@expect',  []
           klass.instance_variable_set '@comment', nil
           klass.instance_variable_set '@prompt',  nil
+          klass.instance_variable_set '@display_format',  nil
         else # we're subclassing some existing model, take its variables
           instance_variables.each do |var|
             iv = instance_variable_get(var)
