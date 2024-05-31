@@ -1,5 +1,3 @@
-require 'json'
-
 class JunOS < Oxidized::Model
   using Refinements
   comment '# '
