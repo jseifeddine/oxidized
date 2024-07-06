@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.metadata['rubygems_mfa_required'] = 'true'
 
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.1'
 
   s.add_runtime_dependency 'asetus',       '~> 0.1'
   s.add_runtime_dependency 'bcrypt_pbkdf', '~> 1.0'
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'net-scp',      '~> 4.0'
   s.add_runtime_dependency 'net-ssh',      '~> 7.1'
   s.add_runtime_dependency 'net-telnet',   '~> 0.2'
-  s.add_runtime_dependency 'psych',        '~> 3.3.2'
+  s.add_runtime_dependency 'psych',        '> 3.3.2'
   s.add_runtime_dependency 'rugged',       '~> 1.6'
   s.add_runtime_dependency 'slop',         '~> 4.6'
 
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha',               '~> 2.1'
   s.add_development_dependency 'pry',                 '~> 0.14.2'
   s.add_development_dependency 'rake',                '~> 13.0'
-  s.add_development_dependency 'rubocop',             '~> 1.63.1'
+  s.add_development_dependency 'rubocop',             '~> 1.64.1'
   s.add_development_dependency 'rubocop-minitest',    '~> 0.35.0'
   s.add_development_dependency 'rubocop-rake',        '~> 0.6.0'
   s.add_development_dependency 'simplecov',           '~> 0.22.0'
